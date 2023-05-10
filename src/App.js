@@ -9,6 +9,9 @@ class App extends React.Component{
   state = {
     todos: [{id: 1, nama: "reading book"},{id: 2, nama: "workout training"}]
   }
+  deleteTask = id => {
+    console.log("delete ok");
+  }
  render() {
   const {todos} = this.state;
   return (
@@ -20,7 +23,7 @@ class App extends React.Component{
       </div>
       <div className='list'>
         {todos.map (item => 
-         <TodoItem key={item.id} todo={item}/>
+         <TodoItem key={item.id} todo={item} del={this.deleteTask}/>
          
           )}
        
