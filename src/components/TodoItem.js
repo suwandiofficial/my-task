@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "./Button";
 
-const TodoItem = () => {
+const TodoItem = (props) => {
     return(
         <div style={todoItem}>
-            <p> title item</p>
+            <p> {props.todo.nama} </p>
             <div style={todoItem} >
                 <Button text="edit" variant="success"/>
                 <Button text="delete" variant="warning"/>
