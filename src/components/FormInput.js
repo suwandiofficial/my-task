@@ -16,11 +16,14 @@ class FormInput extends React.Component{
         if(this.state.text !==""){
             this.props.add(this.state.text)
         }
+        this.setState({
+            text : ""
+        })
     }
     render(){
     return(
         <form style={inputForm} onSubmit={this.submit}>
-            <input type="text" style={input} onChange={this.change} placeholder="Text" />
+            <input type="text" style={input} onChange={this.change} value={this.state.text}placeholder="Text" />
             <Button text="add" variant="primary" action={this.submit}/>
         </form>
     )
