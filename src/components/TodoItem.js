@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 
 const TodoItem = ({todo,del}) => {
-    const delByid = id => {
-        del(id)
-    }
+   const delByid = id => {
+    del(id)
+   }
     return(
         <div style={todoItem}>
             <p> {todo.nama}</p>
             <div style={todoItem} >
-                <Button text="edit" variant="success" action={delByid(todo.id)}/>
-                <Button text="delete" variant="warning"/>
+                <Button text="edit" variant="success" />
+                <Button text="delete" variant="warning" action={() => delByid(todo.id)}/>
 
             </div>
         </div>
